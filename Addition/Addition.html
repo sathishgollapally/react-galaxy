@@ -1,0 +1,62 @@
+<html>
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World Basic</title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+<body>
+
+
+<div id="root"/>
+</div>
+
+<script type="text/babel">
+    function App()   {
+
+    const [num1, setNum1] = React.useState("");
+    const [num2, setNum2] = React.useState("");
+    const [sum, setSum]  = React.useState(null);
+
+    const handleSum = () => {
+        const result = num1 + num2;
+        setSum(result);
+    }
+
+        return <div>
+            Please Enter first Number:
+            <input type="number"
+                value={num1}
+                onChange={(e) => setNum1(e.target.value)}>
+            </input>
+            <p>
+            Please Enter Second Number:
+            <input type ="number"
+                value={num2}
+                onChange={(e) => setNum2(e.target.value)}>
+            </input>
+            </p>
+            <p>
+            <button onClick={handleSum}> Submit
+            </button>
+            <p>
+            {sum !== null && (
+                    <p>The sum is: {sum}</p>
+             )}
+            </p>
+            </p>
+          </div>
+    }
+
+    const containerRef = document.getElementById("root");
+    const root = ReactDOM.createRoot(containerRef);
+    root.render(<App/>);
+
+</script>
+
+</body>
+
+
+</html>
