@@ -1,0 +1,40 @@
+<html>
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World Basic</title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+<body>
+
+
+<div id="root"/>
+</div>
+
+<script type="text/babel">
+   
+   // arrow function feature of ES6
+   const Hello = (props) => {
+        return <div> Hello {props.name} </div>
+   }
+
+    const App = () => {
+        return <div>
+               <Hello name="Sachin"/>
+               <Hello name="Kohli"/>
+               <Hello name="Dhoni"/>
+               </div>
+    }
+
+    const containerRef = document.getElementById("root");
+    const root = ReactDOM.createRoot(containerRef);
+    root.render(<App/>);
+
+</script>
+
+</body>
+
+
+</html>
